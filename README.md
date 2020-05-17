@@ -12,7 +12,6 @@ However, make sure you set the following:
 - SystemUUID
 - MLB
 
-
 ## Hardware
 
 Type|Item
@@ -24,17 +23,16 @@ Type|Item
 ## What work and what doesn't
 
 ### Works:
-- IGPU: you can switch to branch `igpu` to use IGPU
+- IGPU: `master` branch uses IGPU as headless. you can switch to branch `igpu` to use IGPU for monitor.
 - Ethernet
 - Onboard Audio (including digital audio)
 - Sleep/Wake
-- USB 3.1 and Thunderbolt 3
-- iMessage
-- Facetime
+- USB 3.1 
+- Thunderbolt 3 (I tested with a USB Hub Type C)
+- iMessage and Facetime
 - Handoff
 - Bluetooth & Wi-Fi (via Broadcom adapter)
-- Airdrop
-- Continuity
+- Airdrop Continuity
 - ALL DRMs:
   - iTunes Movies (FairPlay 1.x)
   - Netflix (FairPlay 2.x/3.x)
@@ -43,44 +41,48 @@ Type|Item
 - Power Nap
 - NVRAM
 
-
-### Doesn't work:
-
-* Onboard Wifi: Won't work, I removed it and replaced with DW1560 Broadcom BCM94352Z Card
-* Sidecar: I don't have Ipad to test.
-
 ### Not Yet Tested
 
 - FileVault
+- Sidecar: I don't have Ipad to test.
 
 ## Step By Step Instructions
 
-I literally just followed the [OpenCore Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/). When you have troubles, take look at my KEXTs, drivers and config.list for guidance.
+I literally just followed the [OpenCore Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/). 
+When you have troubles, take look at my kexts, drivers and config.list for guidance.
 
 #### The SSDT's I ended up using are:
 
-- SSDT-AWAC
-- SSDT-EC-USBX
-- SSDT-PLUG
-- SSDT-PMC
-- SSDT-UIAC
+- SSDT-AWAC : Fix Clock
+- SSDT-EC-USBX : Fix EC and USB powers.
+- SSDT-PLUG : For CPU
+- SSDT-PMC : NVRAM
+- SSDT-UIAC : Mapping USB
+
+#### Note: Don't use any SSDT you don't know usage.
 
 ## USB Port Map & SSDT
 
-You can get a lot of information over here: https://www.tonymacx86.com/threads/success-asrock-z390-phantom-gaming-itx-tb3-igpu-mojave-sff-build.277418/
+I can get a lot of information over here: [TonyMacX86 Topic](https://www.tonymacx86.com/threads/success-asrock-z390-phantom-gaming-itx-tb3-igpu-mojave-sff-build.277418/)
 
-However I decided to use a bit different configuration from that guide. 
+For mapping, I used `SSDT-UIAC.aml` with vanila `UsbInjectAll` kext. I'm not using custom `UsbInjectPorts` kext.
+
+However I decided to use a bit different configuration from that guide:
 
 ### Used ports: 
 
-- HS01, HS14: Internal header
+- HS01: Internal header
+- HS14: Internal header for bluetooth
 - HS10, SS07: Front USB3 and USB2
 - HS11, SS08: Front USB3 and USB2
-- HS03, HS04: Top USB 2
-- HS05, HS06: Middle USB 2
-- HS08, HS09: Bottom USB 2
-- SS01, SS02: Top USB 3
+- HS03, HS04: Back Top USB 2
+- HS05, HS06: Back Middle USB 2
+- HS08, HS09: Back Bottom USB 2
+- SS01, SS02: Back Top USB 3
+
+Only after mapping those necessary 14 ports, my TB3 port works.
 
 ## Changelogs
 
+- 18/5/2020: Update README
 - 17/5/2020: Initial config
