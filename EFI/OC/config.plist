@@ -632,6 +632,7 @@
 	<dict>
 		<key>BlessOverride</key>
 		<array>
+			<string>\EFI\Microsoft\Boot\bootmgfw.efi</string>
 		</array>
 		<key>Boot</key>
 		<dict>
@@ -642,7 +643,7 @@
 			<key>HideAuxiliary</key>
 			<false/>
 			<key>HideSelf</key>
-			<true/>
+			<false/>
 			<key>PickerAttributes</key>
 			<integer>0</integer>
 			<key>PickerAudioAssist</key>
@@ -652,7 +653,7 @@
 			<key>PollAppleHotKeys</key>
 			<false/>
 			<key>ShowPicker</key>
-			<false/>
+			<true/>
 			<key>TakeoffDelay</key>
 			<integer>0</integer>
 			<key>Timeout</key>
