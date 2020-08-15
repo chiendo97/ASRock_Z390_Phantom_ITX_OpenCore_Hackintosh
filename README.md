@@ -18,7 +18,7 @@ Type|Item
 :----|:----
 **CPU** | [Intel Core i5-9400 2.9 GHz 6-Core Processor](https://pcpartpicker.com/product/V4RzK8/intel-core-i5-9400-29-ghz-6-core-processor-bx80684i59400)
 **Motherboard** | [ASRock Z390 Phantom Gaming-ITX/ac Mini ITX Motherboard](https://pcpartpicker.com/product/fvQG3C/asrock-z390-phantom-gaming-itxac-mini-itx-lga1151-motherboard-z390-phantom-gaming-itxac)
-**Video Card** | [Gigabyte Radeon RX 580 8 GB Gaming 8G Video Card](https://pcpartpicker.com/product/KQQRsY/gigabyte-radeon-rx-580-8gb-gaming-8g-video-card-gv-rx580gaming-8gd)
+**Video Card** | [MSI GeForce RTX 2080 8 GB SEA HAWK X](https://pcpartpicker.com/product/b7qhP6/msi-geforce-rtx-2080-8gb-sea-hawk-x-video-card-geforce-rtx-2080-sea-hawk-x)
 
 ## What work and what doesn't
 
@@ -40,6 +40,9 @@ Type|Item
   - Apple TV+ (FairPlay 4.x)
 - Power Nap
 - NVRAM
+
+### Doesn't work:
+- MSI GeForce RTX 2080 8 GB SEA HAWK X (disable through OpenCore)
 
 ### Not Yet Tested
 
