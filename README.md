@@ -1,3 +1,11 @@
+# Disclaimer
+
+I'm no longer maintain this config repo due to migrating into a new build here. https://github.com/chiendo97/Hackintosh-Intel-AsRock-Z490-Phantom-ITX-TB3
+
+But I think this is still usefull for anyone has the similar build.
+
+Long live Hackintosh.
+
 # Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac via OpenCore
 
 <p align="center">
